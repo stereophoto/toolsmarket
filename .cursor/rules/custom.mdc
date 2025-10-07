@@ -1,0 +1,77 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+1. General Project Rules
+
+Use Vue 3 + TypeScript
+State management — Pinia
+Style preprocessor — SCSS or TailwindCSS
+Maximum UI component size — 100 lines
+Maximum file length — 200 lines
+Maximum function length — 10 lines
+Follow SOLID and DRY principles
+Use a design system and reference base components and color palette
+
+2. Project Structure
+
+src/components/ — reusable components
+src/pages/ — pages (e.g., Home.vue, Dashboard.vue)
+src/store/ — state management using Pinia
+src/composables/ — reusable logic (hooks, API requests)
+src/assets/ — images, fonts, styles
+src/config/ — configuration and global variables
+src/types/ — TypeScript types and interfaces
+src/utils/ — utility functions and helpers
+src/directives/ — custom Vue directives
+
+3. Code Style
+
+Indentation: 2 spaces
+Use single quotes (') instead of double quotes
+No semicolon (;)
+Maximum line length: 100 characters
+Trailing commas in objects (trailingComma: 'all')
+Use PascalCase for component names
+Use camelCase for variables and methods
+Avoid any, use explicit types and interfaces
+Use defineProps and defineEmits with TypeScript types
+Destructure props instead of using this.props
+
+4. Vue Components
+
+Use <script setup> for cleaner code
+Maximum 5 props per component
+Maximum 10 methods per component
+Always use scoped styles
+Use computed properties instead of methods when possible
+Avoid unnecessary reactivity (ref or reactive only when needed)
+Use v-bind for dynamic attributes instead of inline expressions
+Avoid using v-if and v-for together for performance reasons
+Keep template logic minimal, move complex logic to computed or methods
+
+5. Performance & Optimization
+
+Lazy load routes using defineAsyncComponent
+Use dynamic imports for large dependencies
+Use the key attribute with v-for
+Use watch instead of watchEffect unless reactivity tracking is required
+Avoid deep watchers unless necessary
+Debounce expensive operations like API calls inside watch or computed
+
+6. Security & Best Practices
+
+Never use v-html unless absolutely necessary
+Sanitize user input before processing
+Use environment variables for sensitive data
+Always validate props with proper TypeScript types
+Use async/await instead of .then() for better readability
+Handle errors using try/catch and provide fallback UI
+Keep dependencies updated and remove unused packages
+
+7. Task Completion and Server Start
+
+After completing a task, there is no need to require starting the server unless explicitly specified
+Focus on ensuring that the code passes linting and tests before finalizing the task
