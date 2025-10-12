@@ -90,7 +90,7 @@
     </div>
 
     <!-- Loading State -->
-    <div v-else class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div v-else-if="loading" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="text-center">
         <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-primary mx-auto"></div>
         <p class="mt-4 text-gray-600 dark:text-gray-400">Загрузка товара...</p>
@@ -98,7 +98,7 @@
     </div>
 
     <!-- 404 State -->
-    <div v-if="!product && !loading" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div v-else class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="text-center">
         <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Товар не найден</h1>
         <p class="text-gray-600 dark:text-gray-400 mb-8">Извините, запрашиваемый товар не существует.</p>

@@ -105,11 +105,11 @@ const productsStore = useProductsStore()
 const products = computed(() => productsStore.products)
 
 const selectedColors = ref<Record<string, string>>({
-  '1': 'red' // Default selection
+  '1': 'gray' // Default selection
 })
 
 const getCurrentImage = (product: Product): ProductImage => {
-  const selectedColor = selectedColors.value[product.id] || 'red'
+  const selectedColor = selectedColors.value[product.id] || 'gray'
   const currentImage = product.images.find(img => img.colorId === selectedColor)
   return currentImage || product.images[0]
 }
@@ -136,6 +136,7 @@ const formatPrice = (price: number) => {
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
