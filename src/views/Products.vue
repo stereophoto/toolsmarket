@@ -25,16 +25,6 @@
               class="w-full h-full object-cover transition-all duration-500"
               loading="lazy"
             />
-            
-            <!-- Color indicators -->
-            <div class="absolute bottom-4 left-4 flex space-x-2">
-              <div
-                v-for="color in product.colors.slice(0, 4)"
-                :key="color.id"
-                class="w-6 h-6 rounded-full border-2 border-white shadow-lg"
-                :style="{ backgroundColor: color.hex }"
-              />
-            </div>
           </div>
 
           <!-- Product Info -->
@@ -85,10 +75,10 @@
             <!-- Action Buttons -->
             <div class="flex space-x-3">
               <router-link
-                to="/contact"
-                class="flex-1 bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 text-center text-sm"
+                :to="`/product/${product.id}`"
+                class="flex-1 bg-gray-800 dark:bg-gray-700 hover:bg-gray-900 dark:hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 text-center text-sm"
               >
-                Связаться с продавцом
+                Подробнее
               </router-link>
             </div>
           </div>

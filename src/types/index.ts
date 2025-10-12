@@ -5,6 +5,7 @@ export interface Product {
   price: number
   currency: string
   images: ProductImage[]
+  gallery: GalleryImage[]
   colors: ColorOption[]
   category: string
   specifications: ProductSpec[]
@@ -15,6 +16,12 @@ export interface ProductImage {
   url: string
   alt: string
   colorId: string
+}
+
+export interface GalleryImage {
+  id: string
+  url: string
+  alt: string
 }
 
 export interface ColorOption {

@@ -108,7 +108,7 @@
         </div>
         <div class="w-full h-[420px] bg-gray-100 dark:bg-gray-700 flex items-center justify-center relative">
           <iframe
-            src="https://yandex.com/map-widget/v1/?um=constructor%3A551bdb35b19387519c3eec770ef2cdc67c712377ace2f1cd58db4eed3964d3f1&amp;source=constructor"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aec46d85da31486a6b7580e3f5bdbd607faf35a3247b480ffdf6a5357a54295b5&amp;source=constructor"
             class="w-full h-full rounded-b-2xl"
             frameborder="0"
             allowfullscreen

@@ -51,7 +51,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Галерея товара -->
           <div class="order-2 lg:order-1">
-            <ProductGallery :product="featuredProduct" />
+            <ProductCard :product="featuredProduct" />
           </div>
 
           <!-- Информация о товаре -->
@@ -64,6 +64,16 @@
                 {{ featuredProduct.description }}
               </p>
             </div>
+            
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4">
+              <router-link
+                :to="`/product/${featuredProduct.id}`"
+                class="bg-gray-800 dark:bg-gray-700 hover:bg-gray-900 dark:hover:bg-gray-600 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 text-center hover:scale-105"
+              >
+                Подробнее
+              </router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -75,7 +85,7 @@
 import { computed } from 'vue'
 import { useProductsStore } from '../store/products'
 import Navigation from '../components/Navigation.vue'
-import ProductGallery from '../components/ProductGallery.vue'
+import ProductCard from '../components/ProductCard.vue'
 
 const productsStore = useProductsStore()
 
