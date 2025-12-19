@@ -8,7 +8,20 @@ export const useProductsStore = defineStore('products', {
         id: '1',
         name: 'Держатель для стяжек',
         description:
-          'Это удобный держатель на руку для стяжек: они не упадут и их удобно доставать во время работы на высоте.',
+          'Это удобный держатель на руку для стяжек-хомутов. Удобство в работе и хранении.',
+        longDescription: `
+          Держатель для стяжек-хомутов — удобный и практичный аксессуар, который всегда под рукой.
+
+          Предназначен для эффективной работы и хранения кабельных стяжек (хомутов). Обеспечивает быстрый доступ к расходным материалам и позволяет производить загрузку стяжек одной рукой благодаря простому и надёжному фиксатору.
+
+          Комплектуется ремнём с двумя пластиковыми пряжками — разъёмной и регулирующей. Это позволяет быстро и надёжно закрепить держатель на руке, поверх одежды, на поясном ремне, стремянке, вышке-туре и других элементах рабочей зоны.
+
+          Небольшой вес не мешает работе, а конструкция предотвращает рассыпание и выпадение стяжек при использовании и хранении. Яркие цвета делают держатель хорошо заметным в сумке с инструментами.
+
+          Особенно удобен при работе на высоте или в стеснённых условиях. Предусмотрена возможность нанесения маркировки или логотипа для персонализации.
+
+          Изображения товара могут содержать водяной знак (логотип).
+          `,
         price: 450,
         currency: 'RUB',
         category: 'tools',
@@ -33,11 +46,16 @@ export const useProductsStore = defineStore('products', {
           }
         ],
         gallery: [
-          { id: 'gallery-1', url: '/images/1/gallery/1.jpg', alt: 'Держатель для стяжек - вид спереди' },
-          { id: 'gallery-2', url: '/images/1/gallery/2.jpg', alt: 'Держатель для стяжек - вид сбоку' },
-          { id: 'gallery-3', url: '/images/1/gallery/3.jpg', alt: 'Держатель для стяжек - в использовании' },
-          { id: 'gallery-4', url: '/images/1/gallery/4.jpg', alt: 'Держатель для стяжек - детали' },
-          { id: 'gallery-5', url: '/images/1/gallery/5.jpg', alt: 'Держатель для стяжек - использование' }
+          { id: 'gallery-preview', url: '/videos/1/preview.mp4', alt: '', type: 'video' },
+          { id: 'gallery-1', url: '/images/1/gallery/1.jpg', alt: '', type: 'image' },
+          { id: 'gallery-2', url: '/images/1/gallery/2.jpg', alt: '', type: 'image' },
+          { id: 'gallery-3', url: '/images/1/gallery/3.jpg', alt: '', type: 'image' },
+          { id: 'gallery-4', url: '/images/1/gallery/4.jpg', alt: '', type: 'image' },
+          { id: 'gallery-5', url: '/images/1/gallery/5.jpg', alt: '', type: 'image' },
+          { id: 'gallery-6', url: '/images/1/gallery/6.jpg', alt: '', type: 'image' },
+          { id: 'gallery-7', url: '/images/1/gallery/7.jpg', alt: '', type: 'image' },
+          { id: 'gallery-8', url: '/images/1/gallery/8.jpg', alt: '', type: 'image' },
+          { id: 'gallery-9', url: '/images/1/gallery/9.jpg', alt: '', type: 'image' },
         ] as GalleryImage[],
         colors: [
           { id: 'gray', name: 'Серый', hex: '#2A2E35', isAvailable: true },
@@ -45,7 +63,7 @@ export const useProductsStore = defineStore('products', {
           { id: 'black', name: 'Черный', hex: '#000000', isAvailable: true },
         ] as ColorOption[],
         specifications: [
-          { name: 'Материал', value: 'Пластик' },
+          { name: 'Материал', value: 'Пластик, Металл' },
           { name: 'Вес', value: '44 грамма' },
           { name: 'Размеры', value: '80 x 50 x 10 мм' }
         ]

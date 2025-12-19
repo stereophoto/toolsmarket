@@ -42,8 +42,8 @@
               <span class="text-4xl font-bold text-primary">{{ formatPrice(product.price) }}</span>
               <span class="text-lg text-gray-500 dark:text-gray-400">{{ product.currency }}</span>
             </div>
-            <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              {{ product.description }}
+            <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line">
+              {{ product.longDescription }}
             </p>
           </div>
 
@@ -117,7 +117,6 @@
 import { computed, ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useProductsStore } from '../store/products'
-import type { Product } from '../types'
 import Navigation from '../components/Navigation.vue'
 import ProductGallery from '../components/ProductGallery.vue'
 import Gallery from '../components/Gallery.vue'
@@ -125,16 +124,11 @@ import Gallery from '../components/Gallery.vue'
 const route = useRoute()
 const productsStore = useProductsStore()
 const loading = ref(true)
-const selectedColor = ref('white')
 
 const product = computed(() => {
   const productId = route.params.id as string
   return productsStore.getProductById(productId) || null
 })
-
-const selectColor = (colorId: string) => {
-  selectedColor.value = colorId
-}
 
 const formatPrice = (price: number) => {
   return new Intl.NumberFormat('ru-RU', {

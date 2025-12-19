@@ -2,6 +2,7 @@ export interface Product {
   id: string
   name: string
   description: string
+  longDescription: string
   price: number
   currency: string
   images: ProductImage[]
@@ -22,6 +23,7 @@ export interface GalleryImage {
   id: string
   url: string
   alt: string
+  type: 'image' | 'video';
 }
 
 export interface ColorOption {

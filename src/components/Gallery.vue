@@ -8,12 +8,23 @@
       <div v-if="gallery.length > 0" class="relative">
         <!-- Main Image Display -->
         <div class="relative aspect-video bg-gray-100 dark:bg-gray-700 rounded-xl overflow-hidden mb-4">
-          <img
-            :src="currentImage.url"
-            :alt="currentImage.alt"
-            class="w-full h-full object-contain transition-all duration-500"
-            loading="lazy"
-          />
+          <template v-if="currentImage.type === 'image'">
+            <img
+              :src="currentImage.url"
+              :alt="currentImage.alt"
+              class="w-full h-full object-contain transition-all duration-500"
+              loading="lazy"
+            />
+          </template>
+          
+          <template v-else-if="currentImage.type === 'video'">
+            <video
+              class="w-full h-full object-contain rounded-xl"
+              controls
+              :src="currentImage.url"
+              preload="metadata"
+            ></video>
+          </template>
           
           <!-- Navigation Arrows -->
           <button
@@ -47,22 +58,38 @@
         <!-- Thumbnail Navigation -->
         <div v-if="gallery.length > 1" class="flex space-x-2 overflow-x-auto pb-2">
           <button
-            v-for="(image, index) in gallery"
-            :key="image.id"
+            v-for="(item, index) in gallery"
+            :key="item.id"
             @click="goToImage(index)"
-            class="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 "
+            class="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 relative flex items-center justify-center"
             :class="[
               currentIndex === index 
                 ? 'border-primary' 
                 : 'border-gray-200 dark:border-gray-600'
             ]"
           >
+            <!-- Image thumbnail -->
             <img
-              :src="image.url"
-              :alt="image.alt"
+              v-if="item.type === 'image'"
+              :src="item.url"
+              :alt="item.alt"
               class="w-full h-full object-contain bg-white dark:bg-gray-800"
               loading="lazy"
             />
+
+            <!-- Video thumbnail as SVG icon -->
+            <div
+              v-else-if="item.type === 'video'"
+              class="absolute inset-0 flex items-center justify-center bg-black dark:bg-gray-900"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
           </button>
         </div>
       </div>

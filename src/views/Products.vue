@@ -4,7 +4,7 @@
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <!-- Header -->
-      <div class="text-center mb-16">
+      <div class="text-center mb-12">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
           Наша продукция
         </h1>
@@ -86,7 +86,7 @@
       </div>
 
       <!-- Load More Section -->
-      <div class="text-center mt-16">
+      <div class="text-center mt-12">
         <p class="text-gray-600 dark:text-gray-400 mb-6">
           Больше товаров скоро появится. Следите за обновлениями!
         </p>
